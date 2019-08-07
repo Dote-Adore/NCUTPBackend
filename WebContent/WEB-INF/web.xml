@@ -152,5 +152,13 @@
 		<servlet-name>mangedelete</servlet-name>
 		<url-pattern>/manage/deletepublish</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>getMessageList</servlet-name>
+		<servlet-class>com.cyc.message.GetMessageList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getMessageList</servlet-name>
+		<url-pattern>/message/getlist</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -1,6 +1,6 @@
 package com.cyc.entity;
 
-import java.sql.Timestamp;
+import com.alibaba.fastjson.JSONObject;
 
 public class Messages {
 	private Integer id;
@@ -12,7 +12,7 @@ public class Messages {
 	private String remark;
 	private String content2;
 	private String imgsrc;
-	private boolean hasRead;
+	private boolean hasread;
 	public Integer getId() {
 		return id;
 	}
@@ -67,11 +67,24 @@ public class Messages {
 	public void setImgsrc(String imgsrc) {
 		this.imgsrc = imgsrc;
 	}
-	public boolean isHasRead() {
-		return hasRead;
+	public boolean isHasread() {
+		return hasread;
 	}
-	public void setHasRead(boolean hasRead) {
-		this.hasRead = hasRead;
+	public void setHasread(boolean hasread) {
+		this.hasread = hasread;
 	}
-	
+	public JSONObject tojson() {
+		JSONObject js = new JSONObject();
+		js.put("id", id);
+		js.put("userid",userid );
+		js.put("type",type );
+		js.put("title",title );
+		js.put("time",time );
+		js.put("content",content );
+		js.put("remark",remark );
+		js.put("content2", content2);
+		js.put("imgsrc",imgsrc);
+		js.put("hasRead",hasread);
+		return js;
+	}
 }

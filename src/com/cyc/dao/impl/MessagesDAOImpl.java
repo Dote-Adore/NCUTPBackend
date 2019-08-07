@@ -1,7 +1,6 @@
 package com.cyc.dao.impl;
 
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.cyc.dao.MessagesDAO;
@@ -21,19 +20,21 @@ public class MessagesDAOImpl implements MessagesDAO {
 	}
 
 	@Override
-	public Integer getUnreadNum(int userid) {
+	public Integer getUnreadNum(int userid)throws SQLException {
 		// TODO 自动生成的方法存根
 		return null;
 	}
 
 	@Override
-	public List<Messages> getlist(int userid) {
+	public List<Messages> getlist(int userid)throws SQLException {
 		// TODO 自动生成的方法存根
-		return null;
+		String sql = "select * from messages where userid=?";
+		return DB.getForList(Messages.class, sql, userid);
+
 	}
 
 	@Override
-	public void setRead(Integer... messageid) {
+	public void setRead(Integer... messageid)throws SQLException{
 		// TODO 自动生成的方法存根
 
 	}
