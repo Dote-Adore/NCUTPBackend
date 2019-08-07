@@ -3,7 +3,6 @@ package com.cyc.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.alibaba.fastjson.JSONArray;
 import com.cyc.entity.PublishImg;
 
 public interface PublishImgDAO {

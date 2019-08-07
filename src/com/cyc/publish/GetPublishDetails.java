@@ -73,8 +73,8 @@ public class GetPublishDetails extends HttpServlet {
 		// TODO 自动生成的方法存根
 		PrintWriter out = resp.getWriter();
 		JSONArray jsonArray = new JSONArray();
-		int categoryid = Integer.parseInt(req.getParameter("categoryid"));
-		int page = Integer.parseInt(req.getParameter("page"));
+		Integer categoryid = Integer.parseInt(req.getParameter("categoryid"));
+		Integer page = Integer.parseInt(req.getParameter("page"));
 		PublishDetailDAOImpl PDDI = new PublishDetailDAOImpl();
 
 		List<PublishDetail> PD = PDDI.examineByCatagroyid(categoryid,page);

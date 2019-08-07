@@ -136,5 +136,21 @@
 		<servlet-name>sellgoods</servlet-name>
 		<url-pattern>/trade/sell</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>managelogin</servlet-name>
+		<servlet-class>com.cyc.manage.login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>managelogin</servlet-name>
+		<url-pattern>/manage/login</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>mangedelete</servlet-name>
+		<servlet-class>com.cyc.manage.deletepublish</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mangedelete</servlet-name>
+		<url-pattern>/manage/deletepublish</url-pattern>
+	</servlet-mapping>
 
 </web-app>

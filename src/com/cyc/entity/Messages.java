@@ -1,0 +1,77 @@
+package com.cyc.entity;
+
+import java.sql.Timestamp;
+
+public class Messages {
+	private Integer id;
+	private Integer userid;
+	private Integer type;
+	private String title;
+	private String time;
+	private String content;
+	private String remark;
+	private String content2;
+	private String imgsrc;
+	private boolean hasRead;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getUserid() {
+		return userid;
+	}
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	public String getContent2() {
+		return content2;
+	}
+	public void setContent2(String content2) {
+		this.content2 = content2;
+	}
+	public String getImgsrc() {
+		return imgsrc;
+	}
+	public void setImgsrc(String imgsrc) {
+		this.imgsrc = imgsrc;
+	}
+	public boolean isHasRead() {
+		return hasRead;
+	}
+	public void setHasRead(boolean hasRead) {
+		this.hasRead = hasRead;
+	}
+	
+}
