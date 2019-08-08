@@ -1,21 +1,15 @@
 package com.cyc.dao.impl;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.impl.NoConnectionReuseStrategy;
-import org.hamcrest.core.Is;
-import org.omg.PortableServer.POA;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+
+
 import com.cyc.dao.PublishImgDAO;
 import com.cyc.entity.PublishImg;
 import com.cyc.utils.DButils;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 
-import jdk.nashorn.internal.scripts.JS;
 
 public class PublishImgDAOImpl implements PublishImgDAO {
 	private DButils DB;

@@ -15,10 +15,10 @@ public class CommentsDAOImpl implements CommentsDAO {
 		DB = new DButils();
 	}
 	@Override
-	public void insert(int publishid, int userid, String content) throws SQLException {
-		String sql = "insert into comments(publishid,userid,content,time) values(?,?,?,?)";
+	public void insert(int publishid, int userid, String content, int resqid) throws SQLException {
+		String sql = "insert into comments(publishid,userid,content,time,respid) values(?,?,?,?,?)";
 		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		DB.update(sql, publishid,userid,content,ts);
+		DB.update(sql, publishid,userid,content,ts,resqid);
 	}
 
 	@Override
@@ -41,6 +41,11 @@ public class CommentsDAOImpl implements CommentsDAO {
 		String sql = "delete from comments where publishid = ?";
 		DB.update(sql, publishid);
 		
+	}
+	public int getuserid(int id)throws SQLException{
+		String sql = "select * from comments where id = ?";
+		Comments comments = DB.get(Comments.class, sql, id);
+		return comments.getUserid();
 	}
 
 }

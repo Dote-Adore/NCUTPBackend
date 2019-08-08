@@ -1,10 +1,5 @@
 package com.cyc.user;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import com.cyc.utils.WX_API;
 
 public class toWxApi {

@@ -1,7 +1,7 @@
 package com.cyc.entity;
 
 import java.sql.Timestamp;
-import com.cyc.utils.TimeDifference;
+import com.cyc.utils.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 
 public class Comments {
@@ -10,6 +10,13 @@ public class Comments {
 	private Integer userid;
 	private String content;
 	private Timestamp time;
+	private Integer respid;
+	public Integer getRespid() {
+		return respid;
+	}
+	public void setRespid(Integer respid) {
+		this.respid = respid;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -48,7 +55,8 @@ public class Comments {
 		jsonObject.put("publishid",publishid );
 		jsonObject.put("userid",userid );
 		jsonObject.put("content",content );
-		jsonObject.put("time",TimeDifference.Timediff(time));
+		jsonObject.put("time",TimeUtil.Timediff(time));
+		jsonObject.put("respid", respid);
 		return jsonObject;
 	}
 }

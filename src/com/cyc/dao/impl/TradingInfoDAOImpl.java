@@ -2,10 +2,8 @@ package com.cyc.dao.impl;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.alibaba.fastjson.JSONArray;
 import com.cyc.dao.TradingInfoDAO;
 import com.cyc.entity.tradinginfo;
 import com.cyc.utils.DButils;

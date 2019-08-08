@@ -1,7 +1,7 @@
 package com.cyc.entity;
 
 import java.sql.Timestamp;
-import com.cyc.utils.TimeDifference;
+import com.cyc.utils.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 
 
@@ -76,7 +76,7 @@ public class PublishDetail {
 		json.put("commontags", commontags);
 		json.put("price", price);
 		json.put("introduction", introduction);
-		json.put("publishtime", TimeDifference.Timediff(publishtime));
+		json.put("publishtime", TimeUtil.Timediff(publishtime));
 		json.put("exacttime", publishtime);
 		json.put("categoryid", categoryid);
 		json.put("mainimgsrc", mainimgsrc);

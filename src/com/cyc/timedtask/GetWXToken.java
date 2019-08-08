@@ -1,28 +1,22 @@
 package com.cyc.timedtask;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
+
 import java.util.TimerTask;
 
 import javax.servlet.ServletContext;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cyc.dao.impl.PublicDataDAOImpl;
-import com.cyc.utils.DButils;
+//import com.cyc.utils.DButils;
 import com.cyc.utils.WX_API;
 
 public class GetWXToken extends TimerTask {
-	private DButils DB = null;
+//	private DButils DB = null;
 	private ServletContext sc = null;
 	private static boolean running = false;
 	public GetWXToken(ServletContext sc) {
 		this.sc = sc;
-		DB = new DButils();
+	//	DB = new DButils();
 	}
 	public GetWXToken() {
 		

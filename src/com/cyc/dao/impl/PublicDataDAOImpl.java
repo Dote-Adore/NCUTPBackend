@@ -2,10 +2,10 @@ package com.cyc.dao.impl;
 
 import java.sql.SQLException;
 
-import com.cyc.dao.PublichDataDAO;
+import com.cyc.dao.PublicDataDAO;
 import com.cyc.utils.DButils;
 
-public class PublicDataDAOImpl implements PublichDataDAO {
+public class PublicDataDAOImpl implements PublicDataDAO {
 	private DButils DB;
 	public PublicDataDAOImpl() {
 		DB = new DButils();

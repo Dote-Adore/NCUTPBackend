@@ -160,5 +160,21 @@
 		<servlet-name>getMessageList</servlet-name>
 		<url-pattern>/message/getlist</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>getunreadnum</servlet-name>
+		<servlet-class>com.cyc.message.GetUnreadNum</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getunreadnum</servlet-name>
+		<url-pattern>/message/getunreadnum</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>getpublishbyid</servlet-name>
+		<servlet-class>com.cyc.publish.GetByID</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getpublishbyid</servlet-name>
+		<url-pattern>/publish/getbyid</url-pattern>
+	</servlet-mapping>
 
 </web-app>

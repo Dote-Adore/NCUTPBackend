@@ -21,8 +21,9 @@ public class MessagesDAOImpl implements MessagesDAO {
 
 	@Override
 	public Integer getUnreadNum(int userid)throws SQLException {
-		// TODO 自动生成的方法存根
-		return null;
+		String sql = "select count(*) from messages where userid=? and hasread=false";
+		
+		return DB.getCount(sql, userid);
 	}
 
 	@Override
@@ -34,8 +35,10 @@ public class MessagesDAOImpl implements MessagesDAO {
 	}
 
 	@Override
-	public void setRead(Integer... messageid)throws SQLException{
+	public void setRead(int userid)throws SQLException{
 		// TODO 自动生成的方法存根
+		String sql = "update messages set hasread = true where userid = ?";
+				DB.update(sql, userid);
 
 	}
 

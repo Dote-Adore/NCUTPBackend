@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import com.cyc.publish.publishGoods;
-
 public class WX_API {
 	public static final String APPID = "wx65de80923a5af28b";
 	public static final String AppSecretID = "5019ef1cc14bc12794332c03098fce39";

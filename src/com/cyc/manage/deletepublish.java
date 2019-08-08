@@ -4,15 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.jasper.tagplugins.jstl.core.Out;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cyc.dao.impl.CommentsDAOImpl;
@@ -20,8 +16,7 @@ import com.cyc.dao.impl.MessagesDAOImpl;
 import com.cyc.dao.impl.PublishDetailDAOImpl;
 import com.cyc.dao.impl.PublishImgDAOImpl;
 import com.cyc.dao.impl.ViolationHandleDAOImpl;
-import com.cyc.entity.PublishImg;
-import com.sun.net.httpserver.Authenticator.Success;
+import com.cyc.utils.TimeUtil;
 
 public class deletepublish extends HttpServlet {
 	/**
@@ -60,11 +55,11 @@ public class deletepublish extends HttpServlet {
 			
 			//删除img记录
 			PublishImgDAOImpl PIDI = new PublishImgDAOImpl();
-			List<PublishImg> publishImgs =  PIDI.selectAll(publishid);
+			//List<PublishImg> publishImgs =  PIDI.selectAll(publishid);
 			PIDI.deleteAll(publishid);
 			// 给用户发送消息
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			String timetString = sdf.format(time);
+			// 获取当前时间 按照 yyyy-mm-dd hh：mm：ss 格式
+			String timetString = TimeUtil.getFormatTime(time);
 			MessagesDAOImpl MDI = new MessagesDAOImpl();
 			MDI.create(userid, 0, "处罚结果通知", timetString, violatingcontent, remark, publishcontent, imgsrc, false);
 			jsonObject.put("success", true);

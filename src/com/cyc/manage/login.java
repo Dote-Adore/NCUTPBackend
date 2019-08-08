@@ -1,6 +1,5 @@
 package com.cyc.manage;
 
-import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -11,11 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hamcrest.core.Is;
-
 import com.alibaba.fastjson.JSONObject;
 import com.cyc.dao.impl.ManagePersonDAOImpl;
-import com.sun.crypto.provider.RSACipher;
 
 public class login extends HttpServlet {
 	/**
