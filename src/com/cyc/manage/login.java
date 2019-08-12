@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.alibaba.fastjson.JSONObject;
 import com.cyc.dao.impl.ManagePersonDAOImpl;
 
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -30,6 +30,7 @@ public class login extends HttpServlet {
 		// TODO 自动生成的方法存根
 		System.out.println("有用户正在登录...");
 		resp.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("utf-8");
 		String sessionstr = req.getParameter("session");
 		// 如果存在session
 		System.out.println(sessionstr);
@@ -42,6 +43,7 @@ public class login extends HttpServlet {
 			PrintWriter out = resp.getWriter();
 			String user = req.getParameter("user");
 			String password = req.getParameter("password");
+			System.out.println("user: "+user+"; password:" + password);
 			ManagePersonDAOImpl MPDI = new ManagePersonDAOImpl();
 			JSONObject res = new JSONObject();
 			if (MPDI.login(user, password)) {
@@ -63,26 +65,24 @@ public class login extends HttpServlet {
 		}
 
 	}
-	private void autologin(HttpServletRequest req, HttpServletResponse resp, String session) throws IOException {
-
+	private void autologin(HttpServletRequest req, HttpServletResponse resp, String session)throws IOException{
 		PrintWriter out = resp.getWriter();
+		JSONObject jsonObject = new JSONObject();
 		try {
+			
 			ManagePersonDAOImpl MPDI = new ManagePersonDAOImpl();
-			JSONObject jsonObject = new JSONObject();
 			String username = MPDI.getusername(session);
-			if(username==null) {
-				System.out.println("自动登录失败，未找到session");
-				jsonObject.put("success", false);
-				out.print(jsonObject);
-				return;
-			}
 			
 			System.out.println("用户: "+username+"自动登录...");
 			jsonObject.put("user", username);
 			jsonObject.put("success", true);
 			out.print(jsonObject);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("自动登录失败，未找到session");
+			jsonObject.put("success", false);
+			out.print(jsonObject);
+			
 		}
 	}
 }

@@ -3,7 +3,7 @@
 	<!-- 配置和映射servlet-->
 	<servlet>
 		<servlet-name>getOpenId</servlet-name>
-		<servlet-class>com.cyc.user.getOpenId</servlet-class>
+		<servlet-class>com.cyc.user.GetOpenId</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -12,7 +12,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>register</servlet-name>
-		<servlet-class>com.cyc.user.register</servlet-class>
+		<servlet-class>com.cyc.user.Register</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>register</servlet-name>
@@ -20,7 +20,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>getUserDetails</servlet-name>
-		<servlet-class>com.cyc.user.getUserDetails</servlet-class>
+		<servlet-class>com.cyc.user.GetUserDetails</servlet-class>
 	</servlet><servlet-mapping>
 		<servlet-name>getUserDetails</servlet-name>
 		<url-pattern>/getUserDetails</url-pattern>
@@ -28,7 +28,7 @@
 	
 	<servlet>
 		<servlet-name>publishgoods</servlet-name>
-		<servlet-class>com.cyc.publish.publishGoods</servlet-class>
+		<servlet-class>com.cyc.publish.PublishGoods</servlet-class>
 	</servlet><servlet-mapping>
 		<servlet-name>publishgoods</servlet-name>
 		<url-pattern>/publish/publishgoods</url-pattern>
@@ -106,7 +106,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>searchPublish</servlet-name>
-		<servlet-class>com.cyc.publish.searchPublish</servlet-class>
+		<servlet-class>com.cyc.publish.SearchPublish</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>searchPublish</servlet-name>
@@ -122,7 +122,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>getsellinfo</servlet-name>
-		<servlet-class>com.cyc.trading.get</servlet-class>
+		<servlet-class>com.cyc.trading.Get</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>getsellinfo</servlet-name>
@@ -138,7 +138,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>managelogin</servlet-name>
-		<servlet-class>com.cyc.manage.login</servlet-class>
+		<servlet-class>com.cyc.manage.Login</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>managelogin</servlet-name>
@@ -146,7 +146,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>mangedelete</servlet-name>
-		<servlet-class>com.cyc.manage.deletepublish</servlet-class>
+		<servlet-class>com.cyc.manage.DeletePublish</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mangedelete</servlet-name>
@@ -175,6 +175,30 @@
 	<servlet-mapping>
 		<servlet-name>getpublishbyid</servlet-name>
 		<url-pattern>/publish/getbyid</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>createReport</servlet-name>
+		<servlet-class>com.cyc.report.Create</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createReport</servlet-name>
+		<url-pattern>/report/create</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>getreport</servlet-name>
+		<servlet-class>com.cyc.report.Get</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getreport</servlet-name>
+		<url-pattern>/report/get</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>reporthandle</servlet-name>
+		<servlet-class>com.cyc.report.Handle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reporthandle</servlet-name>
+		<url-pattern>/report/handle</url-pattern>
 	</servlet-mapping>
 
 </web-app>

@@ -3,11 +3,11 @@ package com.cyc.dao.impl;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.cyc.dao.managepersonDAO;
+import com.cyc.dao.ManagePersonDAO;
 import com.cyc.entity.ManagePerson;
 import com.cyc.utils.DButils;
 
-public class ManagePersonDAOImpl implements managepersonDAO {
+public class ManagePersonDAOImpl implements ManagePersonDAO {
 	private DButils DB;
 	public ManagePersonDAOImpl() {
 		// TODO 自动生成的构造函数存根
@@ -15,7 +15,7 @@ public class ManagePersonDAOImpl implements managepersonDAO {
 	}
 	@Override
 	public boolean login(String user, String password) throws SQLException {
-		String sql = "select * from manageperson where binary user = ? and password = ?";
+		String sql = "select count(*) from manageperson where user = ? and password = ?";
 		if(DB.getCount(sql, user, password)>0)
 			return true;
 		else 

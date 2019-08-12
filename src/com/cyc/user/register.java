@@ -14,7 +14,7 @@ import com.cyc.dao.impl.UserInfoDetailsDAOImpl;
 import com.cyc.entity.UserInfo;
 import com.cyc.entity.UserInfoDetails;
 
-public class register extends HttpServlet {
+public class Register extends HttpServlet {
 	/**
 	 * 
 	 */

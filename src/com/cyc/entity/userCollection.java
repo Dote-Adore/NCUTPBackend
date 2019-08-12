@@ -1,6 +1,6 @@
 package com.cyc.entity;
 
-public class userCollection {
+public class UserCollection {
 	private Integer id;
 	private Integer userid;
 	private Integer publishid;

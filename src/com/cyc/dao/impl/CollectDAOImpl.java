@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cyc.dao.CollectDAO;
-import com.cyc.entity.userCollection;
+import com.cyc.entity.UserCollection;
 import com.cyc.utils.DButils;
 
 public class CollectDAOImpl implements CollectDAO {
@@ -40,7 +40,7 @@ public class CollectDAOImpl implements CollectDAO {
 	@Override
 	public List<Integer> getAllCollections(int userid) throws SQLException {
 		String sql = " SELECT * FROM usercollection WHERE userid = ?";
-		List<userCollection> list = DB.getForList(userCollection.class, sql, userid);
+		List<UserCollection> list = DB.getForList(UserCollection.class, sql, userid);
 		List<Integer> listInt = new ArrayList<Integer>();
 		for(int i = 0;i<list.size();i++) {
 			listInt.add(list.get(i).getPublishid());

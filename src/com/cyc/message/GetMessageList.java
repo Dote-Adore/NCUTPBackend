@@ -37,7 +37,7 @@ public class GetMessageList extends HttpServlet {
 			for(int i = messageList.size()-1; i >=0 ; i--) {
 				JSONObject js = messageList.get(i).tojson();
 				//如果是评论消息
-				if(js.getInteger("type")==2) {
+				if(js.getInteger("type")==2||js.getInteger("type")==1) {
 					JSONObject remarkJson = JSONObject.parseObject(js.getString("remark"));
 					js.remove("remark");
 					js.put("remark", remarkJson);

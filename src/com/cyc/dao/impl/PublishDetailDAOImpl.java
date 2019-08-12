@@ -67,7 +67,6 @@ public class PublishDetailDAOImpl implements PublishDetailDAO {
 		String sql = "select * from publishdetail where introduction like '%"+Searchstr+"%' order by id desc limit "+page*15+",15";
 		List<PublishDetail> pdList = DB.getForList(PublishDetail.class, sql);
 		return pdList;
-				
 	}
 	
 	@Override

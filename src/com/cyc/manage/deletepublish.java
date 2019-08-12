@@ -18,7 +18,7 @@ import com.cyc.dao.impl.PublishImgDAOImpl;
 import com.cyc.dao.impl.ViolationHandleDAOImpl;
 import com.cyc.utils.TimeUtil;
 
-public class deletepublish extends HttpServlet {
+public class DeletePublish extends HttpServlet {
 	/**
 	 * 
 	 */

@@ -15,7 +15,7 @@ import com.cyc.dao.impl.UserInfoDetailsDAOImpl;
 import com.cyc.entity.UserInfo;
 import com.cyc.entity.UserInfoDetails;
 
-public class getUserDetails extends HttpServlet {
+public class GetUserDetails extends HttpServlet {
 	/**
 	 * 
 	 */

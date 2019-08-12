@@ -16,12 +16,13 @@ public class ViolationHandleDAOImpl implements ViolationHandleDAO {
 	}
 
 	@Override
-	public void create(int publishid, String violatingcontent, int userid, String processingstaff,
+	public int create(int publishid, String violatingcontent, int userid, String processingstaff,
 			String remark, Timestamp time, String publishcontent, String migSrc) throws SQLException {
 		// TODO 自动生成的方法存根
 		String sql = "insert into violationhandle(publishid, violatingcontent, userid, processingstaff,remark,`time`,publishcontent, imgsrc)"
 				+ "values(?,?,?,?,?,?,?,?)";
-		DB.update(sql, publishid,violatingcontent,userid,processingstaff,remark,time,publishcontent,migSrc);
+		return DB.BackIdWhenUpdate(sql, publishid,violatingcontent,userid,processingstaff,remark,time,publishcontent,migSrc);
+		
 	}
 
 	@Override

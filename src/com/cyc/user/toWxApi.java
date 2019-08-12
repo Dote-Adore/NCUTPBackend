@@ -2,7 +2,7 @@ package com.cyc.user;
 
 import com.cyc.utils.WX_API;
 
-public class toWxApi {
+public class ToWxApi {
 	
 	
 	public static StringBuilder getresult(String code) {

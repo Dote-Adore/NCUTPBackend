@@ -43,8 +43,8 @@ public class Create extends HttpServlet {
 			String remarkString = remark.toJSONString();
 			MessagesDAOImpl MDI = new MessagesDAOImpl();
 			String currentTime = TimeUtil.getFormatTime();
-			//发消息给发布者
-			if(userid!=publishuserid) {
+			//发消息给发布者(如果发消息的人不是这个商品主并且不是给商品主回复)
+			if(userid!=publishuserid&&respuserid!=publishuserid) {
 				MDI.create(publishuserid, 2, "评论消息", currentTime, content, remarkString, publishcontent, imgsrc, false);
 				System.out.println("发送一条评论消息给商品持有者："+publishuserid);
 			}

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSONObject;
 import com.cyc.dao.impl.UserInfoDAOImpl;
 
-public class getOpenId extends HttpServlet {
+public class GetOpenId extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -32,7 +32,7 @@ public class getOpenId extends HttpServlet {
         	String paramString = (String)parNames.nextElement();
         	code = request.getParameter(paramString);
         }
-        StringBuilder result = toWxApi.getresult(code);	//这里将获得openid
+        StringBuilder result = ToWxApi.getresult(code);	//这里将获得openid
         
         int startindex = result.indexOf("openid\":")+9;//获取位置
         int endindex = result.indexOf("\"",startindex);

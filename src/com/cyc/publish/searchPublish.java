@@ -17,7 +17,7 @@ import com.cyc.dao.impl.UserInfoDAOImpl;
 import com.cyc.entity.UserInfo;
 import com.cyc.entity.PublishDetail;
 
-public class searchPublish extends HttpServlet {
+public class SearchPublish extends HttpServlet {
 	/**
 	 * 
 	 */
