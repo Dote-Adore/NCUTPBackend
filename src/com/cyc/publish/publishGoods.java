@@ -28,7 +28,7 @@ import com.cyc.entity.PublishDetail;
 import com.cyc.utils.AliyunConfig;
 
 
-public class publishGoods extends HttpServlet {
+public class PublishGoods extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO 自动生成的方法存根
