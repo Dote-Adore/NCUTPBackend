@@ -32,9 +32,9 @@ public class ViolationHandleDAOImpl implements ViolationHandleDAO {
 	}
 
 	@Override
-	public List<ViolationHandle> getByManageName(String name) throws SQLException {
-		// TODO 自动生成的方法存根
-		return null;
+	public List<ViolationHandle> getByManageName(String name, int page) throws SQLException {
+		String sql = "select * from violationhandle where processingstaff = ? order by id desc limit " + page*15 + ",15";
+		return DB.getForList(ViolationHandle.class, sql, name);
 	}
 
 }

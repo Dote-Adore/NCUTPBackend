@@ -2,6 +2,9 @@ package com.cyc.entity;
 
 import java.sql.Timestamp;
 
+import com.alibaba.fastjson.JSONObject;
+import com.cyc.utils.TimeUtil;
+
 public class HandleReport {
 	private Integer id;
 	private boolean reportsuccess;
@@ -81,4 +84,13 @@ public class HandleReport {
 		this.violationhandleid = violationhandleid;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("reportsuccess", reportsuccess);
+		jsonObject.put("informerusername",informerusername );
+		jsonObject.put("reason", reason);
+		jsonObject.put("remarkbystaff", remarkbystaff );
+		jsonObject.put("handletime", TimeUtil.getFormatTime(handletime));
+		return jsonObject;
+	}
 }

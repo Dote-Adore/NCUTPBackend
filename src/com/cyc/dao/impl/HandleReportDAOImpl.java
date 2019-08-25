@@ -6,6 +6,7 @@ import java.util.List;
 import com.cyc.dao.HandleReportDAO;
 import com.cyc.entity.HandleReport;
 import com.cyc.utils.DButils;
+import com.mysql.cj.xdevapi.DbDoc;
 
 public class HandleReportDAOImpl implements HandleReportDAO {
 	private DButils DB;
@@ -23,8 +24,16 @@ public class HandleReportDAOImpl implements HandleReportDAO {
 
 	@Override
 	public List<HandleReport> getAll(int page) throws SQLException {
-		// TODO 自动生成的方法存根
-		return null;
+		String sql = "select * from handlereport order by id desc limit"+page*20 +",20";
+		List<HandleReport> handleReports = DB.getForList(HandleReport.class, sql);
+		return handleReports;
 	}
-
+	
+	@Override
+	public List<HandleReport> getByManageName(String name, int page) throws SQLException {
+		String sql = "select * from handlereport where processingstaff = ? order by id desc limit "+page*20 +",20";
+		List<HandleReport> handleReports = DB.getForList(HandleReport.class, sql, name);
+		return handleReports;
+	}
+	
 }

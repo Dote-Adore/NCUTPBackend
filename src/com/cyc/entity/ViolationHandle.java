@@ -2,11 +2,14 @@ package com.cyc.entity;
 
 import java.sql.Timestamp;
 
+import com.alibaba.fastjson.JSONObject;
+import com.cyc.utils.TimeUtil;
+
 public class ViolationHandle {
 	private Integer id;
 	private Integer publishid;
 	private String violatingcontent;
-	private Integer useid;
+	private Integer userid;
 	private String processingstaff;
 	private String remark;
 	private Timestamp time;
@@ -30,11 +33,11 @@ public class ViolationHandle {
 	public void setViolatingcontent(String violatingcontent) {
 		this.violatingcontent = violatingcontent;
 	}
-	public Integer getUseid() {
-		return useid;
+	public Integer getUserid() {
+		return userid;
 	}
-	public void setUseid(Integer useid) {
-		this.useid = useid;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 	public String getProcessingstaff() {
 		return processingstaff;
@@ -65,5 +68,20 @@ public class ViolationHandle {
 	}
 	public void setImgsrc(String imgsrc) {
 		this.imgsrc = imgsrc;
+	}
+	
+	
+	public JSONObject toJSON() {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("id",id );
+		jsonObject.put("publishid",publishid );
+		jsonObject.put("violatingcontent",violatingcontent );
+		jsonObject.put("userid",userid );
+		jsonObject.put("processingstaff",processingstaff );
+		jsonObject.put("remark",remark );
+		jsonObject.put("time", TimeUtil.getFormatTime(time));
+		jsonObject.put("publishcontent",publishcontent );
+		jsonObject.put("imgsrc",imgsrc );
+		return jsonObject;
 	}
 }

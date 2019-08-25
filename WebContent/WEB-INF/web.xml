@@ -200,5 +200,21 @@
 		<servlet-name>reporthandle</servlet-name>
 		<url-pattern>/report/handle</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>getreportres</servlet-name>
+		<servlet-class>com.cyc.report.GetReportRes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getreportres</servlet-name>
+		<url-pattern>/report/getres</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetViolationHandle</servlet-name>
+		<servlet-class>com.cyc.manage.GetViolationHandle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetViolationHandle</servlet-name>
+		<url-pattern>/violation/getres</url-pattern>
+	</servlet-mapping>
 
 </web-app>

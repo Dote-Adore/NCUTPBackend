@@ -8,4 +8,5 @@ import com.cyc.entity.HandleReport;
 public interface HandleReportDAO {
 	public void create(HandleReport handleReport)throws SQLException;
 	public List<HandleReport> getAll(int page)throws SQLException;
+	public List<HandleReport> getByManageName(String name, int page)throws SQLException;
 }
