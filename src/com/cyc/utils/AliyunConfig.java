@@ -20,8 +20,8 @@ public class AliyunConfig {
 
 	public OSS ossClient() {
 		String endpoint = "http://oss-cn-shanghai.aliyuncs.com";
-		String accessKeyId = "LTAIuoRRV0aKSFYk";
-		String accessKeySecret = "FBGB60zbXtSrpVfnepmFeVNbybduh9";
+		String accessKeyId = "null";
+		String accessKeySecret = "null";
 		return new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 	}
 }
